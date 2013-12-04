@@ -9,7 +9,7 @@
 		function getforecast(latlng)
 		{
 			xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("GET","http://serene-lowlands-1745.herokuapp.com/"+latlng,false);
+			xmlhttp.open("GET","http://whatshappeninginthere.herokuapp.com/"+latlng,false);
 			xmlhttp.send();
 			xmlDoc = JSON.parse(xmlhttp.responseText);
 			return xmlDoc.currently.summary

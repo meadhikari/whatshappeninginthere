@@ -14,19 +14,6 @@
 			xmlDoc = JSON.parse(xmlhttp.responseText);
 			return xmlDoc.currently.summary
 		}
-		function addInfoWindow(marker, message) {
-			// takes a marker and message as input and adds a info  window to the marker with the message
-			var info = message;
-
-			var infoWindow = new google.maps.InfoWindow({
-				content: message
-			});
-
-			google.maps.event.addListener(marker, 'click', function () {
-				console.log(marker.title);
-				infoWindow.open(map, marker);
-			});
-		}
 		function initialize() {
 
 			var latlng = new google.maps.LatLng(27.614189, 85.341797);
@@ -40,8 +27,8 @@
 			map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
 
 			google.maps.event.addListener(map, 'click', function(event) {
-				lat = event.latLng.ob;
-				lng = event.latLng.pb;
+				lat = event.latLng.pb;
+				lng = event.latLng.qb;
 				//map.openInfoWindow(new google.maps.LatLng (lat,lng),document.createTextNode("Hello, world"));
 				//map.openInfoWindow(map.getCenter(),document.createTextNode("Hello, world"));
 				var infoWindow = new google.maps.InfoWindow({

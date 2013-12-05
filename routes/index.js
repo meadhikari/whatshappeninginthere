@@ -14,3 +14,6 @@
  exports.home = function(req,res){
  	res.render("index");
  }
+ exports.gannu = function(req,res){
+ 	res.send("Gannu yo maile banako ho k");
+ }

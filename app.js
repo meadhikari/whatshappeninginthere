@@ -29,6 +29,7 @@ if ('development' == app.get('env')) {
 
 app.get('/:latlng', routes.index);
 app.get('/', routes.home);
+app.get('/gannu', routes.gannu);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

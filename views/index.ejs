@@ -10,6 +10,7 @@
 		{
 			xmlhttp = new XMLHttpRequest();
 			xmlhttp.open("GET","http://whatshappeninginthere.herokuapp.com/"+latlng,false);
+
 			xmlhttp.send();
 			xmlDoc = JSON.parse(xmlhttp.responseText);
 			return xmlDoc.currently.summary
@@ -27,8 +28,8 @@
 			map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
 
 			google.maps.event.addListener(map, 'click', function(event) {
-				lat = event.latLng.pb;
-				lng = event.latLng.qb;
+				lat = event.latLng.lat();
+				lng = event.latLng.lng();
 				//map.openInfoWindow(new google.maps.LatLng (lat,lng),document.createTextNode("Hello, world"));
 				//map.openInfoWindow(map.getCenter(),document.createTextNode("Hello, world"));
 				var infoWindow = new google.maps.InfoWindow({

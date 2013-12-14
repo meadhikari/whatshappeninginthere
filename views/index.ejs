@@ -13,7 +13,8 @@
 
 			xmlhttp.send();
 			xmlDoc = JSON.parse(xmlhttp.responseText);
-			return xmlDoc.currently.summary
+			console.log(xmlDoc);
+			return "<b>Temprature: </b>"+xmlDoc.currently.temperature+"<br /> " +"<b>Currently: </b>"+xmlDoc.currently.summary
 		}
 		function initialize() {
 
